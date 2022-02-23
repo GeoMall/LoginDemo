@@ -19,6 +19,11 @@ import java.util.Collections;
 public class User implements UserDetails {
 
     @Id
+    @SequenceGenerator(
+            name= "UserID_Sequence",
+            sequenceName = "UserID_Sequence",
+            allocationSize = 1
+    )
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private Long userId;
 
@@ -30,10 +35,11 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private userStatus status;
 
-    private boolean locked;
-    private boolean expired;
+    private boolean locked = false;
+    private boolean expired = false;
+    private boolean enabled = false;
 
-    public User(String email, String name, String surname, String password, userStatus status, boolean locked, boolean expired) {
+    public User(String email, String name, String surname, String password, userStatus status, boolean locked, boolean expired, boolean enabled) {
         this.email = email;
         this.name = name;
         this.surname = surname;
@@ -41,6 +47,7 @@ public class User implements UserDetails {
         this.status = status;
         this.locked = locked;
         this.expired = expired;
+        this.enabled = enabled;
     }
 
     @Override
@@ -60,21 +67,21 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return !expired;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return locked;
+        return !locked;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return expired;
+        return enabled;
     }
 }
