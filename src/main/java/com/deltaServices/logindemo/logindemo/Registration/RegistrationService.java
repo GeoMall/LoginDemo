@@ -48,11 +48,6 @@ public class RegistrationService{
             throw new IllegalStateException("The password: " + registrationUserDetails.getPassword() + " is empty.");
         }
 
-        //TODO: AND IF EXISTS and email not confirmed, re send confirmation email
-        //TODO: REMOVE AUTO ADMIN IN SIGNUP METHOD
-
-
-
         //Saving user and generating token
         String token = userService.signUp(
                 new User

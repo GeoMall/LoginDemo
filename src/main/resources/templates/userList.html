@@ -6,7 +6,6 @@
     <title>Users</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -35,8 +34,10 @@
 
 <form>
     <fieldset>
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 style="font-weight: bold;">User List</h1>
+        </div>
 
-        <h1>User List</h1>
 
         <table class="table">
             <thead  class="thead-dark">
@@ -45,7 +46,6 @@
                 <th> Username </th>
                 <th> First Name </th>
                 <th> Last Name </th>
-                <!--<th> Password </th>-->
                 <th> User Status </th>
                 <th> Enabled </th>
                 <th> Locked </th>
@@ -58,7 +58,6 @@
                 <td><Label th:text="${User.email}" /></td>
                 <td><Label th:text="${User.name}" /></td>
                 <td><Label th:text="${User.surname}" /></td>
-              <!--  <td><Label type="password" th:text="${User.password}" /></td>-->
                 <td><Label th:text="${User.status}" /></td>
                 <td><input type= "radio" th:value="${User.enabled}" th:checked="${User.enabled == true}"  disabled/></td>
                 <td><input type= "radio" th:value="${User.expired}" th:checked="${User.expired == true}" disabled/></td>
