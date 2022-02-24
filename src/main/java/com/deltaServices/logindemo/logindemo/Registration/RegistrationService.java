@@ -56,7 +56,7 @@ public class RegistrationService{
                                 registrationUserDetails.getName(),
                                 registrationUserDetails.getSurname(),
                                 registrationUserDetails.getPassword(),
-                                userStatus.ROLE_User,
+                                userStatus.valueOf(registrationUserDetails.getRole()),
                                 false,
                                 false,
                                 false

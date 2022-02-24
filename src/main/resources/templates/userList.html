@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
 <body>
+<!--Navigation bar-->
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,15 +22,19 @@
             <a class="navbar-brand" href="http://localhost:8080/homePage">Login Demo</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Collect the nav links, forms, and other content for toggling-->
         <div sec:authorize="hasRole('ROLE_Admin')" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="http://localhost:8080/userList">User List</a></li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <a class="btn btn-primary btn-small navbar-btn" href="/logout">Sign out</a>
+            </ul>
         </div>
-        <!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+    </div>
 </nav>
+<!--end of Navigation bar-->
+
 
 
 <form>

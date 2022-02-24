@@ -22,7 +22,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+
+     /*   http
                     .csrf().disable()
                     .authorizeRequests()
                     .antMatchers("/h2/**")
@@ -30,42 +31,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                     .headers()
                     .frameOptions()
-                    .disable();
+                    .disable();*/
 
-
-       /*http
-                .csrf()
-               .disable()
-                .authorizeRequests()
-                    .antMatchers("/loginApi/register/**")
-                    .anonymous();*/
 
         http
-                .csrf()
-                .disable()
-                .authorizeRequests()
-                .antMatchers("/signup/**", "/loginApi/register/**","/pageSuccess/**").permitAll()
-                .antMatchers("/**").authenticated()
-                //.anyRequest().authenticated()
+                    .csrf()
+                    .disable()
+                    .authorizeRequests()
+                    .antMatchers("/h2/**", "/signup/**", "/loginApi/register/**","/pageSuccess/**", "/errorPage").permitAll()
+                    .antMatchers("/**").authenticated()
                 .and()
-                .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/homePage", true)
-                .permitAll()
+                    .headers()
+                    .frameOptions()
+                    .disable()
                 .and()
-                .logout()
-                .logoutSuccessUrl("/login");
+                    .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/homePage", true)
+                    .permitAll()
+                .and()
+                    .logout()
+                    .logoutSuccessUrl("/login")
+                .and()
+                    .exceptionHandling()
+                    .accessDeniedPage("/errorPage?errorMessage=\"Access Denied\"");
 
-
-        /*
-.loginPage("/login.html")
-                .defaultSuccessUrl("/homePage.html", true);
-      .and()
-      .logout()
-      .logoutUrl("/perform_logout")
-      .deleteCookies("JSESSIONID")
-      .logoutSuccessHandler(logoutSuccessHandler());
-         */
     }
 
     @Override
