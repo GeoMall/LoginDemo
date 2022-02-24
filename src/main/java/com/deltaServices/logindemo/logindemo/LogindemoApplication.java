@@ -17,7 +17,7 @@ public class LogindemoApplication {
 				"admin",
 				"admin",
 				"admin!",
-				userStatus.Admin,
+				userStatus.ROLE_Admin,
 				false,
 				false,
 				true

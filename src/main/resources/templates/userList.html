@@ -23,16 +23,52 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div sec:authorize="hasRole('Admin')" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div sec:authorize="hasRole('ROLE_Admin')" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="http://localhost:8080/userList">Link</a></li>
+                <li><a href="http://localhost:8080/userList">User List</a></li>
             </ul>
-        </div><!-- /.navbar-collapse -->
+        </div>
+        <!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 
 
+<form>
+    <fieldset>
 
+        <h1>User List</h1>
+
+        <table class="table">
+            <thead  class="thead-dark">
+            <tr>
+                <th> Id </th>
+                <th> Username </th>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <!--<th> Password </th>-->
+                <th> User Status </th>
+                <th> Enabled </th>
+                <th> Locked </th>
+                <th> Expired </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="User : ${userList}">
+                <td><label th:text="${User.userId}" /></td>
+                <td><Label th:text="${User.email}" /></td>
+                <td><Label th:text="${User.name}" /></td>
+                <td><Label th:text="${User.surname}" /></td>
+              <!--  <td><Label type="password" th:text="${User.password}" /></td>-->
+                <td><Label th:text="${User.status}" /></td>
+                <td><input type= "radio" th:value="${User.enabled}" th:checked="${User.enabled == true}"  disabled/></td>
+                <td><input type= "radio" th:value="${User.expired}" th:checked="${User.expired == true}" disabled/></td>
+                <td><input type= "radio" th:value="${User.locked}"  th:checked="${User.locked == true}" disabled/></td>
+            </tr>
+            </tbody>
+        </table>
+    </fieldset>
+
+</form>
 
 
 

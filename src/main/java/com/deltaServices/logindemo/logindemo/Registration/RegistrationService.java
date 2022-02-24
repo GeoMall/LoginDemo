@@ -50,7 +50,7 @@ public class RegistrationService{
 
         //TODO: Check if user already exists
         //TODO: AND IF EXISTS and email not confirmed, re send confirmation email
-
+        //TODO: REMOVE AUTO ADMIN IN SIGNUP METHOD
 
         //Saving user and generating token
         String token = userService.signUp(
@@ -60,7 +60,7 @@ public class RegistrationService{
                                 registrationUserDetails.getName(),
                                 registrationUserDetails.getSurname(),
                                 registrationUserDetails.getPassword(),
-                                userStatus.User,
+                                userStatus.ROLE_Admin,
                                 false,
                                 false,
                                 false

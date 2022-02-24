@@ -50,6 +50,14 @@ public class User implements UserDetails {
         this.enabled = enabled;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority(status.name()));
