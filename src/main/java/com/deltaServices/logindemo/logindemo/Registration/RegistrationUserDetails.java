@@ -11,4 +11,5 @@ public class RegistrationUserDetails {
     private final String name;
     private final String surname;
     private final String password;
+    private final String role;
 }

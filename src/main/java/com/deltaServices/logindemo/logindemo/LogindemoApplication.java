@@ -11,19 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class LogindemoApplication {
 
 	public static void main(String[] args) {
-
-		User adminUser = new User(
-				"admin@loginDemo.com",
-				"admin",
-				"admin",
-				"admin!",
-				userStatus.ROLE_Admin,
-				false,
-				false,
-				true
-		);
-
-
 		SpringApplication.run(LogindemoApplication.class, args);
 	}
 

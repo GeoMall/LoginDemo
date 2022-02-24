@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="error.css">
+    <title>Error Page</title>
+
+    <style>
+        html,
+        body {
+          height: 100%;
+          width: 100%;
+          margin: 0px;
+          background: linear-gradient(90deg, rgba(47,54,64,1) 23%, rgba(24,27,32,1) 100%);
+        }
+
+        .error {
+          position: absolute;
+          left: 100px;
+          top: 400px;
+          transform: translateY(-60%);
+          font-family: 'Righteous', cursive;
+          color: #363e49;
+        }
+
+        .error__title {
+          font-size: 4em;
+          color: white;
+        }
+
+        .error__subtitle {
+          font-size: 2em;
+          color: white;
+        }
+
+        .error__button {
+          min-width: 7em;
+          margin-top: 3em;
+          margin-right: 0.5em;
+          padding: 0.5em 2em;
+          outline: none;
+          border: 2px solid #2f3640;
+          background-color: transparent;
+          border-radius: 8em;
+          color: #576375;
+          cursor: pointer;
+          transition-duration: 0.2s;
+          font-size: 0.75em;
+          font-family: 'Righteous', cursive;
+        }
+
+        .error__button:hover {
+          color: #21252c;
+        }
+
+        .error__button--active {
+          background-color: #e67e22;
+          border: 2px solid #e67e22;
+          color: white;
+        }
+
+        .error__button--active:hover {
+          box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
+          color: white;
+        }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous"/>
+</head>
+<body>
+
+<div class="error">
+    <div class="error__title" >OOPS</div>
+    <div class="error__subtitle">It looks like an issue occurred! Navigate back to the login or signup page.</div>
+    <div class="error__subtitle">Cause:</div><div class="error__subtitle" th:text="${errormsg}"/>
+    <a href="http://localhost:8080/login" class="btn btn-lg btn-primary error__button error__button--active">Login</a>
+    <a href="http://localhost:8080/signup" class="btn btn-lg btn-primary error__button error__button--active">Signup</a>
+</div>
+
+</div>
+</body>
+</html>

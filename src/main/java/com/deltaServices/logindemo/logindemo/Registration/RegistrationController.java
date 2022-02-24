@@ -26,13 +26,18 @@ public class RegistrationController {
                                  @RequestParam String name,
                                  @RequestParam String surname,
                                  @RequestParam String password,
+                                 @RequestParam String role,
                                  Model model){
         String token;
-        model.addAttribute("tokenGenerated","notGenerated");
-        RegistrationUserDetails registrationUserDetails = new RegistrationUserDetails(email, name, surname, password);
+        RegistrationUserDetails registrationUserDetails = new RegistrationUserDetails(email, name, surname, password, role);
 
-        token = registrationService.register(registrationUserDetails);
-        //return new RedirectView("/pageSuccess");
+        try{
+            token = registrationService.register(registrationUserDetails);
+        }catch(Exception ex)
+        {
+            return new ModelAndView("redirect:/errorPage?errorMessage= " + ex.getMessage());
+        }
+
 
         return new ModelAndView("redirect:/pageSuccess");
     }
