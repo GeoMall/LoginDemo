@@ -43,10 +43,7 @@ public class loginController {
 
     @GetMapping("/userList")
     public String userList(Model model){
-
         model.addAttribute("userList", userService.getAllUsers());
-
-        //TODO: CREATE AN ADMIN USER AT STARTUP
         return "userList";
     }
 
