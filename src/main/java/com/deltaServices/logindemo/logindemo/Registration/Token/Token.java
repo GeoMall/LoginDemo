@@ -16,12 +16,12 @@ import java.time.LocalDateTime;
 public class Token {
 
     @Id
+    @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "Token_Sequence_generator")
     @SequenceGenerator(
-            name= "Token_Sequence",
+            name= "Token_Sequence_generator",
             sequenceName = "Token_Sequence",
             allocationSize = 1
     )
-    @GeneratedValue(strategy =  GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false)
