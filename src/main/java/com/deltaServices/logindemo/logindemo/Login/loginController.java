@@ -82,7 +82,7 @@ public class loginController {
         }
 
         //return user list page
-        return new ModelAndView("redirect:/userList");
+        return new ModelAndView("userList");
     }
 
 }
