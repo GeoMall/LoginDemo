@@ -9,7 +9,7 @@
 4. To access login page, navigate to `http://localhost:8080/login`.
 
 ### Mail Server Configuration
-If mailDev is not installed on your pc, from command line perform the below:
+If mailDev is not installed on your machine, from command line perform the below:
 1. Run `npm install -g maildev`
 2. Once it is installed, run `maildev`
 3. Navigate to `http://localhost:1080` to access the maildev inbox.
@@ -38,7 +38,7 @@ The admin user can sign out by pressing the Sign out button from the nav bar, wh
 
 ### User Login
 
-Once the user is on the login page `http://localhost:8080/login`, the user can sign up by clicking the sign up button. This will redirect him to the registration form:
+Once the user is on the login page `http://localhost:8080/login`, the user can sign up by clicking the sign up button. This will redirect them to the registration form:
 
 ![image](https://user-images.githubusercontent.com/23236705/155668737-cdae00c0-bbd0-4819-bc9f-9e02e56acc83.png)
 
@@ -54,7 +54,9 @@ Once the `Activate now` button is clicked, the user should have confirmation tha
 
 ![image](https://user-images.githubusercontent.com/23236705/155669370-4f10a33e-c879-48b2-99ce-118cb40cd654.png)
 
+If the user attempts to log in with out confirming the token or enters incorrect credentials, the below error is displayed:
 
+![image](https://user-images.githubusercontent.com/23236705/155679188-3ea3044f-d2d4-4ca1-a01b-e8864c660a71.png)
 
 
 
