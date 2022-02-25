@@ -19,12 +19,12 @@ import java.util.Collections;
 public class User implements UserDetails {
 
     @Id
+    @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "UserID_Sequence_generator")
     @SequenceGenerator(
-            name= "UserID_Sequence",
+            name= "UserID_Sequence_generator",
             sequenceName = "UserID_Sequence",
             allocationSize = 1
     )
-    @GeneratedValue(strategy =  GenerationType.AUTO)
     private Long userId;
 
     private String email;
