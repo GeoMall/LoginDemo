@@ -21,6 +21,7 @@ public class RegistrationController {
     private RegistrationService registrationService;
     private UserService userService;
 
+    //registration api to register a new user
     @PostMapping(path="finishRegister")
     public ModelAndView register(@RequestParam String email,
                                  @RequestParam String name,
@@ -37,7 +38,6 @@ public class RegistrationController {
         {
             return new ModelAndView("redirect:/errorPage?errorMessage= " + ex.getMessage());
         }
-
 
         return new ModelAndView("redirect:/pageSuccess");
     }
