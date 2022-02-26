@@ -4,7 +4,7 @@
 
 ### Default Project Configuration
 1. Download project from git repository and open in IntelliJ IDE
-2. Run the project. This will start the project on `http://localhost:8080`
+2. Run the project. This will start the project on `http://localhost:8080`. This project was built using Java 13.0.1. If it is not installed on your machine, it can be downloaded from: `https://www.oracle.com/java/technologies/javase/jdk13-archive-downloads.html`
 3. This demo will use the H2 in memory database. To access the H2 console, navigate to `http://localhost:8080/h2/`. Default Credentails are: Username: *sa* with empty password.
 4. To access login page, navigate to `http://localhost:8080/login`.
 
